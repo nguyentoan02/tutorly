@@ -15,8 +15,8 @@ Nếu bạn vừa sửa code ở local, **commit và push những thay đổi n�
 Repository local hiện theo dõi `origin/master`. Để đưa cấu hình Worker mới lên GitHub, chạy từng lệnh:
 
 ```powershell
-git add .gitignore README.md guide_deploy.md wrangler.jsonc
-git commit -m "Configure Cloudflare Worker static assets"
+git add package-lock.json guide_deploy.md
+git commit -m "Fix Cloudflare dependency install"
 git push origin master
 ```
 
@@ -76,6 +76,8 @@ Email Routing đang dùng `tutorly.io.vn` ở tên miền gốc. Dùng `www.tuto
 5. Chọn **301**, bật **Preserve query string**, rồi bấm **Deploy**. Mở `https://tutorly.io.vn` để kiểm tra chuyển sang `https://www.tutorly.io.vn`. [Nguồn: Cloudflare Redirect Rules](https://developers.cloudflare.com/rules/url-forwarding/single-redirects/create-dashboard/).
 
 ## Sau này cập nhật website
+
+Nếu Workers Builds dừng ở `npm clean-install` với lỗi `Invalid Version:`, hãy kiểm tra commit trên GitHub đã chứa `package-lock.json` mới nhất. Lockfile cũ có các gói native tùy chọn thiếu trường `version`; bản trong repository này đã bổ sung phiên bản khớp với dependency cha. Sau khi push, chạy lại deploy trên Cloudflare. Nếu Cloudflare còn dùng cache build cũ, chọn **Retry deployment** với tùy chọn xóa cache (nếu giao diện cung cấp).
 
 Push commit lên branch `master`; Workers Builds sẽ chạy lại `npm run build` và `npx wrangler deploy`. Kiểm tra website, `/robots.txt`, `/sitemap.xml`, ảnh và Email Routing sau lần deploy đầu. [Nguồn: Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/).
 
