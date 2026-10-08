@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+tutorly-pages.zip
+build/
+*.tsbuildinfo
+next-env.d.ts
+.npm-cache/
+.pnpm-store/
+.vercel/
+coverage/
+*.log

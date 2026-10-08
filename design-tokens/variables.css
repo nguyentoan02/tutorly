@@ -1,0 +1,32 @@
+/* Tutorly browser and shadcn/ui tokens. Import once in the app's global CSS. */
+:root {
+  --brand-ocean: #78c9e8;
+  --brand-deep-ocean: #357d9a;
+  --brand-ink: #121117;
+  --brand-yellow: #ffdf3d;
+  --brand-sky: #99c5ff;
+
+  --background: #ffffff;
+  --foreground: #121117;
+  --card: #ffffff;
+  --card-foreground: #121117;
+  --popover: #ffffff;
+  --popover-foreground: #121117;
+  --primary: #121117;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f8;
+  --secondary-foreground: #121117;
+  --muted: #f4f4f8;
+  --muted-foreground: #4d4c5c;
+  --accent: #f4f4f8;
+  --accent-foreground: #121117;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: #dcdce5;
+  --input: #6a697c;
+  --ring: #121117;
+
+  --radius: 4px;
+  --radius-card: 8px;
+  --content-max-width: 1200px;
+}

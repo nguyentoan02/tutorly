@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../design-tokens/variables.css";
+@import "../design-tokens/theme.css";
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    min-width: 320px;
+  }
+
+  ::selection {
+    background: var(--brand-yellow);
+    color: var(--brand-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .page-shell {
+    width: min(calc(100% - 2rem), var(--content-max-width));
+    margin-inline: auto;
+  }
+
+  @media (min-width: 640px) {
+    .page-shell {
+      width: min(calc(100% - 3rem), var(--content-max-width));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-shell {
+      width: min(calc(100% - 4rem), var(--content-max-width));
+    }
+  }
+}
