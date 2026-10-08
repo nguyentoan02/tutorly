@@ -8,5 +8,6 @@ next-env.d.ts
 .npm-cache/
 .pnpm-store/
 .vercel/
+.wrangler/
 coverage/
 *.log

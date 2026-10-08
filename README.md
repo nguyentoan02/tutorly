@@ -13,7 +13,7 @@ Open <http://localhost:3000>.
 
 ## Deploy
 
-The project is configured as a Next.js static export for Cloudflare Pages. Connect the Git repository to Pages using the `Next.js (Static HTML Export)` preset, build command `npm run build`, and output directory `out`. Cloudflare builds on every push to the production branch. Follow [guide_deploy.md](guide_deploy.md) to connect `www.tutorly.io.vn` while keeping Email Routing active.
+The project is configured as a Next.js static export for Cloudflare Workers Static Assets. The build command is `npm run build`; `wrangler.jsonc` points Workers to the generated `out/` directory. Connect the Git repository to Workers Builds with deploy command `npx wrangler deploy`. Follow [guide_deploy.md](guide_deploy.md) to connect `www.tutorly.io.vn` while keeping Email Routing active.
 
 ## Structure
 
